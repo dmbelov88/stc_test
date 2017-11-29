@@ -1,0 +1,24 @@
+syntax = "proto2";
+
+package stc;
+
+message Person {
+  enum Country{
+    Russia = 8;
+    USA = 1;
+    Ukraine = 38;
+  };  
+  required string name = 1;
+  required uint64 phone = 2;
+  required Country country = 3;
+}
+
+message Client {
+  required string name = 1;
+  required string status = 2;
+}
+
+message Message {
+  repeated Client clientRecord = 1;
+  repeated Person personRecord = 2;
+}
